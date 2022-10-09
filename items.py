@@ -4,12 +4,11 @@
 # https://docs.scrapy.org/en/latest/topics/items.html
 
 import scrapy
-from itemloaders.processors import MapCompose,Compose,TakeFirst
 
 
-class ParsGoodItem(scrapy.Item):
-    name = scrapy.Field(output_processor=TakeFirst())
-    url = scrapy.Field(output_processor=TakeFirst())
-    price = scrapy.Field(output_processor=TakeFirst())
-    photos = scrapy.Field()
+class ParsGbItem(scrapy.Item):
+    # define the fields for your item here like:
+    name = scrapy.Field()
+    text = scrapy.Field()
+    link = scrapy.Field()
     _id = scrapy.Field()

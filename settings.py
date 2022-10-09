@@ -1,4 +1,4 @@
-# Scrapy settings for pars_good project
+# Scrapy settings for pars_gb project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,21 +7,20 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'pars_good'
+BOT_NAME = 'pars_gb'
 
-SPIDER_MODULES = ['pars_good.spiders']
-NEWSPIDER_MODULE = 'pars_good.spiders'
-LOG_ENBLED = True
-LOG_LEVEL = 'DEBUG'
-
-IMAGES_STORE = 'photos'
+SPIDER_MODULES = ['pars_gb.spiders']
+NEWSPIDER_MODULE = 'pars_gb.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.42'
+USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Edg/106.0.1370.37'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
+
+LOG_ENABLED = True
+LOG_LEVEL = 'INFO'
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 CONCURRENT_REQUESTS = 32
@@ -35,7 +34,7 @@ DOWNLOAD_DELAY = 3
 #CONCURRENT_REQUESTS_PER_IP = 16
 
 # Disable cookies (enabled by default)
-#COOKIES_ENABLED = False
+COOKIES_ENABLED = True
 
 # Disable Telnet Console (enabled by default)
 #TELNETCONSOLE_ENABLED = False
@@ -49,13 +48,13 @@ DOWNLOAD_DELAY = 3
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'pars_good.middlewares.ParsGoodSpiderMiddleware': 543,
+#    'pars_gb.middlewares.ParsGbSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'pars_good.middlewares.ParsGoodDownloaderMiddleware': 543,
+#    'pars_gb.middlewares.ParsGbDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -67,8 +66,8 @@ DOWNLOAD_DELAY = 3
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'pars_good.pipelines.ParsGoodPipeline': 300,
-    'pars_good.pipelines.CastromaPhotosPiplines' : 200
+    'pars_gb.pipelines.GeekbrainsParserPipeline': 300,
+    'pars_gb.pipelines.CSVPipeline' : 300
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
